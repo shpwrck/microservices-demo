@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: carts-db
+      name: carts-db
   replicas: 1
   template:
     metadata:
@@ -65,7 +65,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: carts
+      name: carts
   replicas: 1
   template:
     metadata:
@@ -126,7 +126,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: catalogue-db
+      name: catalogue-db
   replicas: 1
   template:
     metadata:
@@ -172,7 +172,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: catalogue
+      name: catalogue
   replicas: 1
   template:
     metadata:
@@ -214,12 +214,14 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    name: front-end
   name: front-end
   namespace: sock-shop
 spec:
   selector:
     matchLabels:
-      app: front-end
+      name: front-end
   replicas: 1
   template:
     metadata:
@@ -271,7 +273,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: orders-db
+      name: orders-db
   replicas: 1
   template:
     metadata:
@@ -328,7 +330,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: orders
+      name: orders
   replicas: 1
   template:
     metadata:
@@ -389,7 +391,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: payment
+      name: payment
   replicas: 1
   template:
     metadata:
@@ -438,7 +440,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: queue-master
+      name: queue-master
   replicas: 1
   template:
     metadata:
@@ -480,7 +482,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: rabbitmq
+      name: rabbitmq
   replicas: 1
   template:
     metadata:
@@ -530,7 +532,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: shipping
+      name: shipping
   replicas: 1
   template:
     metadata:
@@ -591,7 +593,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: user-db
+      name: user-db
   replicas: 1
   template:
     metadata:
@@ -648,7 +650,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: user
+      name: user
   replicas: 1
   template:
     metadata:
